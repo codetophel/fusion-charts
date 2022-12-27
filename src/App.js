@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactFC from 'react-fusioncharts';
+import FusionCharts from 'fusioncharts';
+import Charts from 'fusioncharts/fusioncharts.charts';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import Column2D from './Charts/Column2D';
+import Doughnut3D from './Charts/Doughnut3D';
+import MultiCharts from './Charts/MultiCharts';
 
-function App() {
+ReactFC.fcRoot(FusionCharts, Charts, FusionTheme);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='case'>
+      <Column2D ReactFC={ReactFC} />
+      <Doughnut3D ReactFC={ReactFC} />
+      <MultiCharts ReactFC={ReactFC} />
     </div>
   );
-}
+};
 
 export default App;
